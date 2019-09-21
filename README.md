@@ -5,8 +5,11 @@ Credits to Elliot Kroo for the GIF sequence writer.
 
 ## Usage:
 
+Download the runnable JAR from the repo, or you can just click [here](https://github.com/austin0209/GIFMaker/raw/master/GIFMaker.jar).
+Note that the program requires Java 8 or above.
+
 Click "Select Region" to select a region. A selection is made by clicking and dragging.
-Once the region is selected, click "Make GIF." The resulting gif will be saved in the active directory.
+Once the region is selected, click "Make GIF." The resulting gif will be saved in the active directory (the folder you run the JAR in).
 
 ## Parameter Info:
 Use these parameters to edit the smoothness and file size of your GIF, as well as to change the semantics of the program for your  convenience.
