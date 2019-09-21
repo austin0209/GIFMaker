@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GIFMaker:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/GIFMaker_jar</output-path>
+    <root id="archive" name="GIFMaker.jar">
+      <element id="module-output" name="GIFMaker" />
+    </root>
+  </artifact>
+</component>
