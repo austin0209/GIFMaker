@@ -21,7 +21,7 @@ public class ScreenCapper {
 		this.testImage = capScreen(new Rectangle(0, 0, 10, 10));
 	}
 	
-	public BufferedImage capScreen(Rectangle region) throws IOException {
+	public BufferedImage capScreen(Rectangle region) {
 		BufferedImage screenFullImage = robot.createScreenCapture(region);
 		return screenFullImage;
 	}
@@ -42,6 +42,8 @@ public class ScreenCapper {
 	    Graphics2D g2d = dimg.createGraphics();
 	    g2d.drawImage(tmp, 0, 0, null);
 	    g2d.dispose();
+
+	    tmp.flush();
 
 	    return dimg;
 	}  
