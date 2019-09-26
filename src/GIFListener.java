@@ -40,7 +40,6 @@ public class GIFListener implements ActionListener {
 		for (int i = 0; i < images.length; i++) {
 			gifMaker.writeToSequence(images[i]);
 		}
-		gifMaker.close();
 		GIFWindow.setStatus("GIF Created as " + GIFWindow.getFileName() + ".gif!");
 		GIFWindow.enableGifButton();
 	}
@@ -57,9 +56,9 @@ public class GIFListener implements ActionListener {
 		public MakeListener() throws IIOException, IOException {
 			cap = new ScreenCapper();
 			output = new FileImageOutputStream(new File(GIFWindow.getFileName() + ".gif"));
-			gifMaker = new GifSequenceWriter(output, cap.testImage.getType(), GIFWindow.getDelay(), true);
 			numFrames = GIFWindow.getNumFrames() + 1;
 			images = new BufferedImage[numFrames];
+			gifMaker = new GifSequenceWriter(output, cap.testImage.getType(), GIFWindow.getDelay(), true);
 			framesMade = 0;
 		}
 
@@ -72,7 +71,13 @@ public class GIFListener implements ActionListener {
 					GIFWindow.setStatus("Processing GIF...");
 					makeTimer.stop();
 					putGifTogether(images, gifMaker);
+					gifMaker.close();
 					output.close();
+					for(int i = 0; i < images.length; i++) {
+						// free memory
+						images[i].flush();
+						images[i] = null;
+					}
 				}
 			} catch (IOException e1) {
 				e1.printStackTrace();

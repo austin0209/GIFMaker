@@ -120,7 +120,6 @@ public class GIFWindow extends JFrame {
 		gifButton.setEnabled(false);
 		panel.add(gifButton);
 		gifButton.revalidate();
-		
 	}
 	
 	public static void setEnabledSelectButton(boolean set) {
