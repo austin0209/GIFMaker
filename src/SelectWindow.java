@@ -33,7 +33,10 @@ public class SelectWindow extends JFrame {
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 		setVisible(true);
-		setOpacity(0.5f);
+
+		if (this.getGraphicsConfiguration().isTranslucencyCapable()) {
+			setOpacity(0.5f);
+		}
 		
 		add(new DrawingPanel(), BorderLayout.CENTER);
 	}
